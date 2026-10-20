@@ -1,39 +1,49 @@
 import Hero from './components/Hero'
 import { evento } from './data/evento'
-import { autores } from './data/evento'
-import CartaoAutor from './components/CartaoAutor'
+import Cabecalho from './components/Cabecalho'
 import Inscricao from './components/Inscricao'
+import Sobre from './components/Sobre'
+import Programacao from './components/Programacao'
+import ListaAtracoes from './components/ListaAtracoes'
+import Rodape from './components/Rodape'
+import Faq from './components/Faq'
+
 
 
 function App() {
   return (
-    <main>
-      <Hero />
-      <CartaoAutor />
-      <Inscricao />  
-    </main>
+    <>
+      {/* 1. Cabeçalho no topo da página */}
+      <Cabecalho />
+      
+      {/* 2. Conteúdo principal dentro da tag main */}
+      <main>
+        <Hero />
+        
+        {/* Adicionando a página Sobre */}
+        <Sobre />
+
+        {/* Programação do evento */}
+        <Programacao />
+
+        {/* Cartões das atrações mapeadas */}
+        <ListaAtracoes /> 
+
+      { }
+        <Faq />
+        {/* Passamos o objeto 'evento' criado no seu arquivo de dados */}
+        <Inscricao evento={evento} /> 
+        
+      </main>
+
+      
+
+      {/* 3. Rodapé na parte de baixo da página */}
+      <Rodape evento={evento} />
+    </>
   )
 }
+
 export default App
 
-function Rodape() {
-  return <footer>{evento.nome} · {evento.data}</footer>
-}
 
-function Autores() {
-  return (
-    <ul>
-      {autores.map((autor) => (
-        <li key={autor.nome}>
-          {autor.nome} — {autor.genero}
-        </li>
-      ))}
-    </ul>
-  )
-}
-
-{
-  autores.map((autor) => (
-    <CartaoAutor key={autor.nome} nome={autor.nome} genero={autor.genero} />
-  ))
-}
