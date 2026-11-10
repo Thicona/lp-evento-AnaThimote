@@ -1,25 +1,25 @@
-import {useState} from 'react'
+import { useState } from 'react'
 
 function Inscricao({ evento }) {
- const [nome, setNome] = useState('')
- const [email, setEmail] = useState('')
- const [ingresso, setIngresso] = useState('Entrada - gratuita')
+  const [nome, setNome] = useState('')
+  const [email, setEmail] = useState('')
+  const [ingresso, setIngresso] = useState('Entrada - gratuita')
 
- const [enviado, setEnviado] = useState(false)
+  const [enviado, setEnviado] = useState(false)
 
- const handleEnviar = (e) => {
+  const handleEnviar = (e) => {
     e.preventDefault() // impede a página de recarregar 
 
     if (nome.trim() === '' || email.trim() === '') {
-        alert('Por favor, preencha todos os campos!')
-        return 
+      alert('Por favor, preencha todos os campos!')
+      return
     }
     setEnviado(true)  // altera o estado para sumir com o formulário e mostrar que foi enviado
- }
+  }
 
- return (
+  return (
     <section id="inscricao" className='bg-white px-6 py-16 max-w-xl mx-auto my-8 border border-green-800 rounded-2xl shadow-sm text-black'>
-         {/* SE JÁ FOI ENVIADO: Mostra apenas a mensagem de confirmação */}
+      {/* SE JÁ FOI ENVIADO: Mostra apenas a mensagem de confirmação */}
       {enviado ? (
         <div className="text-center py-8 bg-green-50 rounded-xl p-6 border border-green-100">
           <span className="text-4xl mb-4 block">✅</span>
@@ -43,8 +43,8 @@ function Inscricao({ evento }) {
             {/* Campo Nome */}
             <div className="flex flex-col gap-1.5">
               <label className="font-semibold text-sm text-gray-700">Nome Completo</label>
-              <input 
-                type="text" 
+              <input
+                type="text"
                 placeholder="Digite seu nome"
                 value={nome}
                 onChange={(e) => setNome(e.target.value)}
@@ -55,8 +55,8 @@ function Inscricao({ evento }) {
             {/* Campo E-mail */}
             <div className="flex flex-col gap-1.5">
               <label className="font-semibold text-sm text-gray-700">E-mail</label>
-              <input 
-                type="email" 
+              <input
+                type="email"
                 placeholder="seu@email.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -66,11 +66,12 @@ function Inscricao({ evento }) {
 
             {/* Campo Tipo de Ingresso (<select>) atualizado com os valores do briefing */}
             <div className="flex flex-col gap-1.5">
-              <label className="font-semibold text-sm text-gray-700">Tipo de Ingresso</label>
-              <select 
+              <label htmlFor="tipo-ingresso" className="font-semibold text-sm text-gray-700">Tipo de Ingresso</label>
+              <select
+                id="tipo-ingresso"
                 value={ingresso}
                 onChange={(e) => setIngresso(e.target.value)}
-                className="border border-gray-300 rounded-xl px-4 py-2.5 bg-white outline-none focus:border-orange-500 transition-colors cursor-pointer"
+                className="border border-gray-300 rounded-xl px-4 py-2.5 bg-white outline-none focus:border-orange-500 transition-colors"
               >
                 <option value="Entrada — gratuita">Entrada — gratuita</option>
                 <option value="Aula-show com degustação — R$ 90">Aula-show com degustação — R$ 90</option>
@@ -79,9 +80,9 @@ function Inscricao({ evento }) {
             </div>
 
             {/* Botão de Envio */}
-            <button 
+            <button
               type="submit"
-              className="w-full bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-4 rounded-xl transition-colors shadow-sm mt-4"
+              className="w-full bg-orange-700 hover:bg-orange-800 text-white font-bold py-3 px-4 rounded-xl transition-colors shadow-sm mt-4"
             >
               Garantir minha vaga
             </button>
@@ -89,7 +90,7 @@ function Inscricao({ evento }) {
         </div>
       )}
     </section>
- )
+  )
 
 }
 

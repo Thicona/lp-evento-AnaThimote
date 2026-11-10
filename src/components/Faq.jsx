@@ -1,34 +1,74 @@
-import { faq } from '../data/evento'
+import { useState } from 'react';
 
-function Faq() {
+export default function Faq() {
+  // Lista de perguntas e respostas oficiais do briefing
+  const faqData = [
+    {
+      id: 'resposta-cartao',
+      pergunta: 'Aceita cartão?',
+      resposta: 'Sim, todas as barracas aceitam cartão e Pix.',
+    },
+    {
+      id: 'resposta-vegetariana',
+      pergunta: 'Tem opção vegetariana?',
+      resposta: 'Sim, pelo menos cinco barracas têm pratos sem carne.',
+    },
+    {
+      id: 'resposta-cachorro',
+      pergunta: 'Posso levar meu cachorro?',
+      resposta: 'Pode, desde que na coleira.',
+    }
+  ];
+
+  // Estado para controlar qual pergunta está aberta (armazena o ID)
+  const [abertoId, setAbertoId] = useState(null);
+
+  const toggleFaq = (id) => {
+    setAbertoId(abertoId === id ? null : id);
+  };
+
   return (
-    // 🟤 Mesmo padrão de cartão creme translúcido com borda verde escura das outras seções
-    <section id="faq" className="bg-orange-50 backdrop-blur-md px-6 py-16 max-w-4xl mx-auto my-8 border-2 border-green-800 rounded-2xl shadow-xl text-black">
-      
-      <h2 className="text-3xl font-bold mb-10 text-center text-green-700 tracking-wide uppercase">
-        Dúvidas Frequentes
+    <section id="duvidas" className="max-w-3xl mx-auto py-12 px-4 scroll-mt-20">
+      <h2 className="text-3xl font-bold text-center text-emerald-900 mb-8">
+        Perguntas Frequentes
       </h2>
+      
+      <div className="space-y-4">
+        {faqData.map((item) => {
+          const isExpanded = abertoId === item.id;
 
-      <div className="space-y-6 max-w-2xl mx-auto">
-        {faq.map((item) => (
-          <div 
-            key={item.id} 
-            className="p-5 bg-white/60 border border-green-800/10 rounded-xl shadow-sm hover:shadow-md transition-shadow"
-          >
-            {/* Pergunta em Marrom Escuro */}
-            <h3 className="text-lg font-black text-amber-950 mb-2">
-              {item.pergunta}
-            </h3>
-            
-            {/* Resposta em texto cinza escuro de fácil leitura */}
-            <p className="text-gray-700 font-medium text-base leading-relaxed">
-              {item.resposta}
-            </p>
-          </div>
-        ))}
+          return (
+            <div key={item.id} className="border-b border-gray-200 pb-4">
+              {/* REQUISITO: cada pergunta é um <button>, dentro de um título (<h3>) */}
+              <h3 className="text-lg font-semibold text-slate-800">
+                <button
+                  type="button"
+                  onClick={() => toggleFaq(item.id)}
+                  // REQUISITO: o botão tem aria-expanded ligado a um useState
+                  aria-expanded={isExpanded}
+                  // REQUISITO: o botão tem aria-controls apontando para o id da resposta
+                  aria-controls={item.id}
+                  className="flex justify-between items-center w-full text-left py-3 hover:text-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-500 rounded px-2 transition-colors"
+                >
+                  <span>{item.pergunta}</span>
+                  <span className="ml-2 transform transition-transform duration-200" aria-hidden="true">
+                    {isExpanded ? '▲' : '▼'}
+                  </span>
+                </button>
+              </h3>
+
+              {/* REQUISITO: a resposta fica escondida com o atributo hidden quando fechada */}
+              <p
+                id={item.id}
+                hidden={!isExpanded}
+                className="mt-2 text-slate-600 bg-gray-50 p-4 rounded-lg leading-relaxed"
+              >
+                {item.resposta}
+              </p>
+            </div>
+          );
+        })}
       </div>
     </section>
-  )
+  );
 }
-
-export default Faq

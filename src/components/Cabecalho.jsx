@@ -23,6 +23,9 @@ function Cabecalho() {
           <a href="#inscricao" className="hover:text-orange-600 transition-colors">
             Inscrição
           </a>
+          <a href="#duvidas" className="hover:text-orange-600 transition-colors">
+            Dúvidas
+          </a>
         </nav>
       </div>
     </header>
