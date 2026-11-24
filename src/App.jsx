@@ -7,8 +7,7 @@ import Programacao from './components/Programacao'
 import ListaAtracoes from './components/ListaAtracoes'
 import Rodape from './components/Rodape'
 import Faq from './components/Faq'
-
-
+import Grafico from './components/Grafico'
 
 function App() {
   return (
@@ -29,14 +28,14 @@ function App() {
         {/* Cartões das atrações mapeadas */}
         <ListaAtracoes /> 
 
-      { }
         <Faq />
+
+        {/* Gráfico posicionado antes da seção de inscrição */}
+        <Grafico />
+
         {/* Passamos o objeto 'evento' criado no seu arquivo de dados */}
         <Inscricao evento={evento} /> 
-        
       </main>
-
-      
 
       {/* 3. Rodapé na parte de baixo da página */}
       <Rodape evento={evento} />
@@ -45,5 +44,3 @@ function App() {
 }
 
 export default App
-
-
