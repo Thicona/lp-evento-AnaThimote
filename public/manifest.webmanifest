@@ -1,0 +1,12 @@
+{
+  "name": "Festival Sabores da Alta Paulista",
+  "short_name": "Festival Sabores da Alta Paulista",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#16a34a",
+  "theme_color": "#16a34a",
+  "icons": [
+    { "src": "/icone-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icone-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
