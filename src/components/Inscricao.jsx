@@ -18,7 +18,8 @@ function Inscricao({ evento }) {
   }
 
   return (
-    <section id="inscricao" className='bg-white px-6 py-16 max-w-xl mx-auto my-8 border border-green-800 rounded-2xl shadow-sm text-black'>
+   <section id="inscricao" className="bg-white px-4 sm:px-6 py-12 sm:py-16 max-w-xl mx-4 sm:mx-auto my-8 border border-green-800 rounded-2xl shadow-sm text-black">
+
       {/* SE JÁ FOI ENVIADO: Mostra apenas a mensagem de confirmação */}
       {enviado ? (
         <div className="text-center py-8 bg-green-50 rounded-xl p-6 border border-green-100">

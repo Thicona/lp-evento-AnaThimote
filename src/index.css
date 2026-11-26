@@ -5,3 +5,8 @@
   --color-destaque: #dc2626;
   --color-fundo: #fefce8;
 }
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}

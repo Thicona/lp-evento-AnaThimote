@@ -44,24 +44,28 @@ function Grafico() {
     });
   }, []);
 
-  return (
-    <section className="px-6 py-16 max-w-2xl mx-auto">
-      <div className="bg-[#f2e6d6]/60 border border-orange-200/60 rounded-2xl p-6 shadow-sm">
-        <h2 className="text-2xl font-extrabold text-emerald-800">
-          Ingressos vendidos por categoria
-        </h2>
+// Em Grafico.jsx
+return (
+  <section className="px-4 sm:px-6 py-12 sm:py-16 max-w-2xl mx-auto">
+    <div className="bg-[#f2e6d6]/60 border border-orange-200/60 rounded-2xl p-4 sm:p-6 shadow-sm overflow-hidden">
+      <h2 className="text-xl sm:text-2xl font-extrabold text-emerald-800">
+        Ingressos vendidos por categoria
+      </h2>
 
+      {/* O wrapper com overflow-x-auto impede que o canvas quebre a largura da página */}
+      <div className="mt-4 w-full overflow-x-auto">
         <canvas
           ref={canvasRef}
           width={390}
           height={180}
           role="img"
           aria-label="Gráfico de barras horizontais mostrando ingressos vendidos: Pratos Doces com 120, Salgados com 85 e Bebidas com 45."
-          className="mt-4 max-w-full bg-white rounded-xl p-2 border border-orange-100"
+          className="w-full h-auto bg-white rounded-xl p-2 border border-orange-100"
         />
       </div>
-    </section>
-  );
+    </div>
+  </section>
+);
 }
 
 export default Grafico;
