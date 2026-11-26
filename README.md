@@ -2,12 +2,6 @@
 
 Projeto de divulgação do Festival Sabores da Alta Paulista, apresentando informações sobre o evento, atrações, datas e localização.
 
-## 🌐 Acesso ao site
-
-**Site publicado na Vercel:**
-
-https://lp-evento-ana-thimote.vercel.app/
-
 ## 🚀 Deploy
 
 **Link do site publicado:**
