@@ -1,16 +1,38 @@
-# React + Vite
+# 🍽️ Festival Sabores da Alta Paulista
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Projeto de divulgação do Festival Sabores da Alta Paulista, apresentando informações sobre o evento, atrações, datas e localização.
 
-Currently, two official plugins are available:
+## 🌐 Acesso ao site
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+**Site publicado na Vercel:**
 
-## React Compiler
+https://lp-evento-ana-thimote.vercel.app/
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Deploy
 
-## Expanding the ESLint configuration
+**Link do site publicado:**
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+https://lp-evento-ana-thimote.vercel.app/
+
+## 📊 Testes do Lighthouse
+
+Os testes foram realizados utilizando o Lighthouse do Google Chrome.
+
+### Resultados dos testes
+
+![Teste de desempenho](src/img/Captura%20de%20tela%202026-11-26%20144354.png)
+
+
+![Teste de acessibilidade](src/img/Captura%20de%20tela%202026-11-26%20144654.png)
+
+
+## 💻 Tecnologias utilizadas
+
+- HTML
+- CSS
+- JavaScript
+
+## 📌 Repositório
+
+https://github.com/Thicona/lp-evento-AnaThimote
+
